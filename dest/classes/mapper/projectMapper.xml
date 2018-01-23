@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="igakilab.mybatis.product">
+
+	<select id="listenProject" resultType="jp.ac.oit.igakilab.tctr.project.projectManager">
+		SELECT * FROM project;
+	</select>
+	<insert id="createProject">
+		INSERT INTO
+		project(id,name,owner)
+		VALUES
+		(#{id},#{name},#{owner});
+	</insert>
+
+	<update id="overviewInsert">
+		UPDATE project
+		SET overview = #{overview}
+		WHERE id =
+		#{id}
+	</update>
+	
+	<!--
+	<select id="listenSelectProject" resultType="jp.ac.oit.igakilab.tctr.project.projectManager">
+		SELECT * FROM
+		project WHERE id = #{id};
+	</select>
+
+	<update id="projectStateOpen">
+		UPDATE project
+		SET state = "open"
+		WHERE id = #{id}
+	</update>
+
+	<update id="projectStateClose">
+		UPDATE project
+		SET state = "close"
+		WHERE id = #{id}
+	</update>
+
+	<select id="listenOwner" resultType="jp.ac.oit.igakilab.tctr.project.projectManager">
+		SELECT name as owner FROM
+		member;
+	</select>
+	-->
+
+</mapper>

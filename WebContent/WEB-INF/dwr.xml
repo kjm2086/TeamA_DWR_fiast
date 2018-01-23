@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr//dwr30.dtd">
+
+<dwr>
+	<allow>
+		<!-- todo -->
+		<create creator="new" javascript="todoCreator">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.todoList.todoCreator" />
+		</create>
+		<create creator="new" javascript="todoListener">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.todoList.todoListener" />
+		</create>
+
+		<!-- project -->
+		<create creator="new" javascript = "projectCreator">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.project.projectCreator" />
+		</create>
+		<create creator="new" javascript = "projectListener">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.project.projectListener" />
+		</create>
+
+		<!-- member -->
+		<create creator="new" javascript = "memberCreator">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.member.memberCreator" />
+		</create>
+		<create creator="new" javascript = "memberListener">
+			<param name="class" value="jp.ac.oit.igakilab.tctr.member.memberListener" />
+		</create>
+
+		<convert converter="bean" match="jp.ac.oit.igakilab.tctr.*" />
+		<convert converter="bean" match="jp.ac.oit.igakilab.tctr.todoList.*" />
+		<convert converter="bean" match="jp.ac.oit.igakilab.tctr.project.*" />
+		<convert converter="bean" match="jp.ac.oit.igakilab.tctr.member.*" />
+		<convert converter="exception" match="java.lang.Exception" />
+		<convert converter="bean" match="java.lang.StackTraceElement" />
+	</allow>
+</dwr>
